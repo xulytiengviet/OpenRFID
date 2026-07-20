@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <!-- Banner Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/rfid_radius_large"
+            app:cardBackgroundColor="@color/rfid_card_surface"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/rfid_card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/app_logo"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@string/app_name" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OpenRFID Suite"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Select an operation mode to get started"
+                        android:textSize="13sp"
+                        android:textColor="@color/rfid_on_surface" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Active Hardware Status Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/hardwareStatusCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/rfid_card_surface"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/rfid_card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📡 Active Hardware Reader"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnChangeHardwareDriver"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚙️ Change Driver"
+                        android:textColor="@color/rfid_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hardwareActiveDriverText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Driver: Auto-Detecting..."
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/rfid_on_surface" />
+
+                <TextView
+                    android:id="@+id/hardwareDeviceInfoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Device: Model Manufacturer"
+                    android:textSize="12sp"
+                    android:textColor="@color/rfid_on_surface" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section 1: Quick Testing Tools -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="⚡ Quick Testing Tools (No Login)" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins">
+
+            <!-- Read Tag Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickReadTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📖 Read Tag"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Scan EPC, TID &amp; USER banks"
+                        android:textSize="12sp"
+                        android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Write Tag Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickWriteTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✏️ Write Tag"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Write EPC/USER data &amp; password"
+                        android:textSize="12sp"
+                        android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Update EPC Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickUpdateEpc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔢 Update EPC"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Batch serial EPC rewriting"
+                        android:textSize="12sp"
+                        android:textColor="@color/rfid_on_surface" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Lock / Unlock Tag Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickTagLock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔒 Lock / Unlock"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Tag security &amp; access pwd"
+                        android:textSize="12sp"
+                        android:textColor="@color/rfid_on_surface" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- UHF Config Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickUhfConfig"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚙️ Reader Config"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rfid_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Driver, power &amp; region settings"
+                        android:textSize="12sp"
+                        android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Diagnostics Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnQuickDiagnostics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="2"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/rfid_card_surface"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/rfid_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🩺 Hardware Diagnostics"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/rfid_primary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Test hardware connection &amp; status logs"
+                            android:textSize="12sp"
+                            android:alpha="0.7" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        android:tint="@color/rfid_primary"
+                        android:contentDescription="Diagnostics" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+        <!-- Section 2: Enterprise Inventory Engine -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="🏢 Enterprise Inventory Engine" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnEnterpriseInventory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/rfid_chip_background"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/rfid_primary"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📦 Full Store Inventory &amp; Cloud Sync"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/rfid_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Includes live inventory sessions, product catalog search, anti-theft gate monitoring, and API cloud sync (Login required)."
+                    android:textSize="13sp"
+                    android:textColor="@color/rfid_on_surface"
+                    android:alpha="0.8" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    style="@style/Widget.Rfid.Button.Primary"
+                    android:text="Proceed to Enterprise Suite →" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Footer Branding -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Powered by RFID Software India Private Limited\nhttps://rfidsoftwares.com"
+            android:textSize="12sp"
+            android:textColor="@color/rfid_on_surface"
+            android:alpha="0.5" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
