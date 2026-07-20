@@ -11,6 +11,19 @@
 
 ---
 
+## 📥 Download APK
+
+[![Download APK](https://img.shields.io/badge/Download-Latest%20APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/rfidsoftwares/OpenRFID-Handheld-Android-Middleware/releases/latest/download/app-debug.apk)
+
+You can download the latest pre-compiled Android APK directly to your device:
+
+* 📱 **[Direct Download Latest APK (app-debug.apk)](https://github.com/rfidsoftwares/OpenRFID-Handheld-Android-Middleware/releases/latest/download/app-debug.apk)**
+* 📦 **[View All Releases & Assets](https://github.com/rfidsoftwares/OpenRFID-Handheld-Android-Middleware/releases)**
+
+> **Note**: When installing the APK on your handheld device or Android phone, allow *"Install from Unknown Sources"* if prompted by your browser.
+
+---
+
 ## 🚀 Key Features
 
 * **Multi-Vendor Hardware Abstraction Layer (HAL)**: Unified driver abstraction supporting all major handheld RFID hardware vendors:
