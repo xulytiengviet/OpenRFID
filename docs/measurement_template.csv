@@ -1,0 +1,1 @@
+utc_timestamp,reader_model,android_version,firmware_build,uhf_module,chainway_sdk_version,openrfid_commit,country_region_verified,frequency_mhz,tx_power_dbm,antenna_type,tag_model,chip,epc_hex,tid_hex_optional,surface,orientation_deg,distance_m,duration_s,attempts,successful_reads,total_inventory_events,unique_tags,rssi_dbm_median_optional,environment_notes
