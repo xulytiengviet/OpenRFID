@@ -1,3 +1,19 @@
+## 🇻🇳 OpenRFID Lab — Phân tích thẻ, chuẩn ISO và DIY Chainway C72
+
+Bộ tài liệu tiếng Việt bổ sung cho repository này, tập trung vào **tương thích RFID UHF / ISO**, **tầm đọc có kiểm chứng**, và **cách dùng mã nguồn Kotlin hiện có để đọc thẻ Alien ALN-9662 Higgs-3 trên Chainway C72**.
+
+- 📖 **[Trang phân tích tương tác (docs/index.html)](docs/index.html)** — kiến trúc, ma trận thẻ ISO, đánh giá tầm xa, mô phỏng công suất tương đối, biểu mẫu phép đo xuất CSV.
+- 🛠️ **[Hướng dẫn DIY C72 + Alien ALN-9662](docs/DIY_C72_ALN9662.md)** — công cụ, SDK, build/debug, Kotlin, hạn chế TID/EPC, protocol đo tái lập.
+- 🌐 **Việt hóa Android bước đầu:** cấu hình tiếng Việt trong **app/src/main/res/values-vi/strings.xml**, nhãn màn hình chọn chức năng và luồng đọc thẻ đã được đưa sang Android string resources. Các màn hình khác vẫn cần hoàn thiện quốc tế hóa.
+- ⚠️ **Trạng thái khoa học:** tương thích giao thức được đối chiếu với tài liệu hãng và ISO/GS1; **chưa báo cáo thử nghiệm vật lý C72 + ALN-9662**. Tầm 30 m quảng bá của C72 đo bằng thẻ Alien H3 chống kim loại khác ALN-9662 Short.
+- 📡 **Pháp lý:** cấu hình RF phụ thuộc giới hạn vùng, công suất và quy định tại Việt Nam; không tùy tiện mở khóa băng tần/công suất.
+
+**Xuất bản trang web:** Repository hiện chưa bật GitHub Pages. Vào **Settings → Pages → Build and deployment → Deploy from a branch**, chọn **main** và **/docs**, sau đó Save; khi Pages hoàn tất, trang sẽ phục vụ từ địa chỉ Pages do GitHub cung cấp.
+
+> OpenRFID ở đây là fork của [rfidsoftwares/OpenRFID-Handheld-Android-Middleware](https://github.com/rfidsoftwares/OpenRFID-Handheld-Android-Middleware). Phần mềm gốc và quyền tác giả/Apache-2.0 tiếp tục được bảo lưu; các tài liệu bổ sung không thay thế tài liệu SDK chính thức của nhà sản xuất.
+
+---
+
 # OpenRFID-Handheld-Android-Middleware
 
 **Universal Open-Source Android Handheld RFID Middleware & Suite**  
