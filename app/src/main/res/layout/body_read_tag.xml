@@ -10,14 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextAppearance.Rfid.SectionTitle"
-        android:text="Read RFID Tags" />
+        android:text="@string/read_tag_heading" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         style="@style/TextAppearance.Rfid.HelperMetaText"
-        android:text="Scan tags in single shot or continuous live inventory mode." />
+        android:text="@string/read_tag_helper" />
 
     <!-- Mode Selector Card -->
     <com.google.android.material.card.MaterialCardView
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Read Mode"
+                android:text="@string/read_tag_mode"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/rfid_primary" />
@@ -58,7 +58,7 @@
                     android:layout_weight="1"
                     android:checked="true"
                     android:textSize="14sp"
-                    android:text="🎯 Single Read" />
+                    android:text="@string/read_tag_single" />
 
                 <RadioButton
                     android:id="@+id/readModeContinuousRadio"
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14sp"
-                    android:text="🔄 Continuous Read" />
+                    android:text="@string/read_tag_cont" />
             </RadioGroup>
 
             <LinearLayout
@@ -80,7 +80,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Scan nearest tag (Single)" />
+                    android:text="@string/read_tag_button_single" />
 
                 <View
                     android:layout_width="8dp"
@@ -92,7 +92,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Clear" />
+                    android:text="@string/read_tag_clear" />
             </LinearLayout>
 
         </LinearLayout>
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             style="@style/TextAppearance.Rfid.HelperMetaText"
-            android:text="Status: Ready to scan" />
+            android:text="@string/read_tag_ready" />
 
         <TextView
             android:id="@+id/readTagSummaryText"
@@ -121,7 +121,7 @@
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="@color/rfid_primary"
-            android:text="Total: 0 | Unique: 0" />
+            android:text="@string/read_tag_counts_zero" />
     </LinearLayout>
 
     <!-- Scanned Tags Table Header -->
@@ -150,7 +150,7 @@
             android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/rfid_on_surface"
-            android:text="Tag EPC" />
+            android:text="@string/read_tag_epc" />
 
         <TextView
             android:layout_width="56dp"
@@ -168,7 +168,7 @@
             android:textStyle="bold"
             android:textColor="@color/rfid_on_surface"
             android:gravity="center"
-            android:text="Count" />
+            android:text="@string/read_tag_count" />
 
         <TextView
             android:layout_width="56dp"
@@ -177,7 +177,7 @@
             android:textStyle="bold"
             android:textColor="@color/rfid_on_surface"
             android:gravity="end"
-            android:text="Time" />
+            android:text="@string/read_tag_time" />
     </LinearLayout>
 
     <!-- Scanned Tags Table List -->
