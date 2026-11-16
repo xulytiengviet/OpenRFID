@@ -21,5 +21,33 @@
     <string name="offline_message">You appear to be offline. Some actions may be unavailable until your connection returns.</string>
     <string name="status_online">Online</string>
     <string name="status_offline">Offline</string>
+    <string name="read_tag_heading">Read RFID Tags</string>
+    <string name="read_tag_subtitle">Scan tags in single shot or continuous live mode</string>
+    <string name="read_tag_helper">Scan tags in single shot or continuous live inventory mode.</string>
+    <string name="read_tag_mode">Select Read Mode</string>
+    <string name="read_tag_single">🎯 Single Read</string>
+    <string name="read_tag_cont">🔄 Continuous Read</string>
+    <string name="read_tag_button_single">Scan nearest tag (Single)</string>
+    <string name="read_tag_start">Start Continuous Scan</string>
+    <string name="read_tag_stop">Stop Continuous Scan</string>
+    <string name="read_tag_clear">Clear</string>
+    <string name="read_tag_ready">Status: Ready to scan</string>
+    <string name="read_tag_counts_zero">Total: 0 | Unique: 0</string>
+    <string name="read_tag_epc">Tag EPC</string>
+    <string name="read_tag_count">Count</string>
+    <string name="read_tag_time">Time</string>
+    <string name="read_tag_initializing">Initializing reader hardware...</string>
+    <string name="read_tag_reader_ready">Reader ready (%1$s). Select mode and tap scan.</string>
+    <string name="read_tag_init_hw_fail">⚠️ Hardware Init Failed (%1$s): Could not connect to RFID module. Ensure reader power is ON.</string>
+    <string name="read_tag_cleared">Status: Table cleared.</string>
+    <string name="read_tag_scanning">Status: Scanning (Single shot)...</string>
+    <string name="read_tag_init_fail">⚠️ Reader Init Failed (%1$s): Could not connect to physical RFID hardware.</string>
+    <string name="read_tag_no_tag">Status: No tag found nearby.</string>
+    <string name="read_tag_detected">Status: Tag detected (%1$s dBm).</string>
+    <string name="read_tag_hardware_error">⚠️ Hardware Error: %1$s</string>
+    <string name="read_tag_scan_active">Status: Continuous scan active...</string>
+    <string name="read_tag_scan_error">Status: Continuous scan error (%1$s)</string>
+    <string name="read_tag_scan_stopped">Status: Continuous scan stopped. %1$d unique tags captured.</string>
+    <string name="read_tag_summary">Total: %1$d | Unique: %2$d</string>
 </resources>
 
