@@ -30,8 +30,8 @@ import java.util.concurrent.atomic.AtomicLong
 
 class ReadTagFragment : BaseScreenFragment() {
 
-    override fun screenTitle(): String = "Read RFID Tags"
-    override fun screenSubtitle(): String? = "Scan tags in single shot or continuous live mode"
+    override fun screenTitle(): String = getString(R.string.read_tag_heading)
+    override fun screenSubtitle(): String? = getString(R.string.read_tag_subtitle)
     override fun allowOfflinePanel(): Boolean = false
 
     private var bg = Executors.newSingleThreadExecutor()
@@ -76,7 +76,7 @@ class ReadTagFragment : BaseScreenFragment() {
         updateSummaryUI(summaryText)
 
         // Eager Hardware Reader Initialization on Fragment Entry
-        statusText.text = "Initializing reader hardware..."
+        statusText.text = getString(R.string.read_tag_initializing)
         bg.execute {
             val d = RfidDriverFactory.createDriver(UhfConfigPrefs.load(requireContext()).driverId)
             driver = d
@@ -88,21 +88,21 @@ class ReadTagFragment : BaseScreenFragment() {
             isDriverReady = ok
             view.post {
                 if (ok) {
-                    statusText.text = "Reader ready (${d.displayName}). Select mode and tap scan."
+                    statusText.text = getString(R.string.read_tag_reader_ready, d.displayName)
                 } else {
-                    statusText.text = "⚠️ Hardware Init Failed (${d.displayName}): Could not connect to RFID module. Ensure reader power is ON."
+                    statusText.text = getString(R.string.read_tag_init_hw_fail, d.displayName)
                 }
             }
         }
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             if (checkedId == R.id.readModeContinuousRadio) {
-                scanBtn.text = if (isContinuousActive.get()) "Stop Continuous Scan" else "Start Continuous Scan"
+                scanBtn.text = if (isContinuousActive.get()) getString(R.string.read_tag_stop) else getString(R.string.read_tag_start)
             } else {
                 if (isContinuousActive.get()) {
                     stopContinuousScan(scanBtn, statusText)
                 }
-                scanBtn.text = "Scan nearest tag (Single)"
+                scanBtn.text = getString(R.string.read_tag_button_single)
             }
         }
 
@@ -115,7 +115,7 @@ class ReadTagFragment : BaseScreenFragment() {
             totalReadsCount = 0L
             adapter.notifyDataSetChanged()
             updateSummaryUI(summaryText)
-            statusText.text = "Status: Table cleared."
+            statusText.text = getString(R.string.read_tag_cleared)
         }
 
         scanBtn.setOnClickListener {
@@ -128,7 +128,7 @@ class ReadTagFragment : BaseScreenFragment() {
                 }
             } else {
                 // Single Read Mode
-                statusText.text = "Status: Scanning (Single shot)..."
+                statusText.text = getString(R.string.read_tag_scanning)
                 bg.execute {
                     val d = driver ?: RfidDriverFactory.createDriver(UhfConfigPrefs.load(requireContext()).driverId).also { driver = it }
                     if (!isDriverReady) {
@@ -136,7 +136,7 @@ class ReadTagFragment : BaseScreenFragment() {
                     }
                     if (!isDriverReady) {
                         view.post {
-                            statusText.text = "⚠️ Reader Init Failed (${d.displayName}): Could not connect to physical RFID hardware."
+                            statusText.text = getString(R.string.read_tag_init_fail, d.displayName)
                         }
                         return@execute
                     }
@@ -147,10 +147,10 @@ class ReadTagFragment : BaseScreenFragment() {
                         val tags = d.readBufferedTagEvents()
                         d.stopInventory()
                         val snap = tags.firstOrNull()
-                        if (snap == null) Quadruple(false, "Status: No tag found nearby.", null, null)
-                        else Quadruple(true, "Status: Tag detected (${snap.rssi ?: "?"} dBm).", snap.epc, snap.rssi?.toString() ?: "?")
+                        if (snap == null) Quadruple(false, getString(R.string.read_tag_no_tag), null, null)
+                        else Quadruple(true, getString(R.string.read_tag_detected, snap.rssi ?: "?"), snap.epc, snap.rssi?.toString() ?: "?")
                     }.getOrElse {
-                        Quadruple(false, "⚠️ Hardware Error: ${it.message ?: it.javaClass.simpleName}", null, null)
+                        Quadruple(false, getString(R.string.read_tag_hardware_error, it.message ?: it.javaClass.simpleName), null, null)
                     }
 
                     view.post {
@@ -175,8 +175,8 @@ class ReadTagFragment : BaseScreenFragment() {
         summaryText: TextView
     ) {
         if (!isContinuousActive.compareAndSet(false, true)) return
-        scanBtn.text = "Stop Continuous Scan"
-        statusText.text = "Status: Continuous scan active..."
+        scanBtn.text = getString(R.string.read_tag_stop)
+        statusText.text = getString(R.string.read_tag_scan_active)
 
         bg.execute {
             try {
@@ -187,8 +187,8 @@ class ReadTagFragment : BaseScreenFragment() {
                 if (!isDriverReady) {
                     isContinuousActive.set(false)
                     scanBtn.post {
-                        scanBtn.text = "Start Continuous Scan"
-                        statusText.text = "⚠️ Reader Init Failed (${d.displayName}): Could not connect to physical RFID hardware."
+                        scanBtn.text = getString(R.string.read_tag_start)
+                        statusText.text = getString(R.string.read_tag_init_fail, d.displayName)
                     }
                     return@execute
                 }
@@ -214,8 +214,8 @@ class ReadTagFragment : BaseScreenFragment() {
             } catch (e: Exception) {
                 isContinuousActive.set(false)
                 scanBtn.post {
-                    scanBtn.text = "Start Continuous Scan"
-                    statusText.text = "Status: Continuous scan error (${e.message})"
+                    scanBtn.text = getString(R.string.read_tag_start)
+                    statusText.text = getString(R.string.read_tag_scan_error, e.message ?: "unknown")
                 }
             }
         }
@@ -223,8 +223,8 @@ class ReadTagFragment : BaseScreenFragment() {
 
     private fun stopContinuousScan(scanBtn: MaterialButton, statusText: TextView) {
         isContinuousActive.set(false)
-        scanBtn.text = "Start Continuous Scan"
-        statusText.text = "Status: Continuous scan stopped. ${tagList.size} unique tags captured."
+        scanBtn.text = getString(R.string.read_tag_start)
+        statusText.text = getString(R.string.read_tag_scan_stopped, tagList.size)
     }
 
     private fun addOrUpdateTagRow(epc: String, rssi: String) {
@@ -256,7 +256,7 @@ class ReadTagFragment : BaseScreenFragment() {
     }
 
     private fun updateSummaryUI(summaryText: TextView) {
-        summaryText.text = "Total: $totalReadsCount | Unique: ${tagList.size}"
+        summaryText.text = getString(R.string.read_tag_summary, totalReadsCount, tagList.size)
     }
 
     override fun onDestroyView() {
