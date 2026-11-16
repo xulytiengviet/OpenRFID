@@ -45,7 +45,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OpenRFID Suite"
+                        android:text="@string/mode_suite"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Select an operation mode to get started"
+                        android:text="@string/mode_intro"
                         android:textSize="13sp"
                         android:textColor="@color/rfid_on_surface" />
                 </LinearLayout>
@@ -89,7 +89,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="📡 Active Hardware Reader"
+                        android:text="@string/mode_active_reader"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -99,7 +99,7 @@
                         style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="⚙️ Change Driver"
+                        android:text="@string/mode_change_driver"
                         android:textColor="@color/rfid_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="Driver: Auto-Detecting..."
+                    android:text="@string/mode_detecting"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:textColor="@color/rfid_on_surface" />
@@ -119,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="Device: Model Manufacturer"
+                    android:text="@string/mode_device"
                     android:textSize="12sp"
                     android:textColor="@color/rfid_on_surface" />
             </LinearLayout>
@@ -132,7 +132,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="8dp"
             style="@style/TextAppearance.Rfid.SectionTitle"
-            android:text="⚡ Quick Testing Tools (No Login)" />
+            android:text="@string/mode_quick" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -164,7 +164,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📖 Read Tag"
+                        android:text="@string/mode_read"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -173,7 +173,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Scan EPC, TID &amp; USER banks"
+                        android:text="@string/mode_read_desc"
                         android:textSize="12sp"
                         android:alpha="0.7" />
                 </LinearLayout>
@@ -203,7 +203,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="✏️ Write Tag"
+                        android:text="@string/mode_write"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -212,7 +212,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Write EPC/USER data &amp; password"
+                        android:text="@string/mode_write_desc"
                         android:textSize="12sp"
                         android:alpha="0.7" />
                 </LinearLayout>
@@ -242,7 +242,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🔢 Update EPC"
+                        android:text="@string/mode_update_epc"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -251,7 +251,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Batch serial EPC rewriting"
+                        android:text="@string/mode_update_desc"
                         android:textSize="12sp"
                         android:textColor="@color/rfid_on_surface" />
                 </LinearLayout>
@@ -281,7 +281,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🔒 Lock / Unlock"
+                        android:text="@string/mode_lock"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -290,7 +290,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Tag security &amp; access pwd"
+                        android:text="@string/mode_lock_desc"
                         android:textSize="12sp"
                         android:textColor="@color/rfid_on_surface" />
                 </LinearLayout>
@@ -320,7 +320,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="⚙️ Reader Config"
+                        android:text="@string/mode_config"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/rfid_primary" />
@@ -329,7 +329,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Driver, power &amp; region settings"
+                        android:text="@string/mode_config_desc"
                         android:textSize="12sp"
                         android:alpha="0.7" />
                 </LinearLayout>
@@ -367,7 +367,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="🩺 Hardware Diagnostics"
+                            android:text="@string/mode_diag"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/rfid_primary" />
@@ -376,7 +376,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Test hardware connection &amp; status logs"
+                            android:text="@string/mode_diag_desc"
                             android:textSize="12sp"
                             android:alpha="0.7" />
                     </LinearLayout>
@@ -399,7 +399,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="8dp"
             style="@style/TextAppearance.Rfid.SectionTitle"
-            android:text="🏢 Enterprise Inventory Engine" />
+            android:text="@string/mode_enterprise" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnEnterpriseInventory"
@@ -422,7 +422,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📦 Full Store Inventory &amp; Cloud Sync"
+                    android:text="@string/mode_full_inventory"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/rfid_primary" />
@@ -431,7 +431,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Includes live inventory sessions, product catalog search, anti-theft gate monitoring, and API cloud sync (Login required)."
+                    android:text="@string/mode_enterprise_desc"
                     android:textSize="13sp"
                     android:textColor="@color/rfid_on_surface"
                     android:alpha="0.8" />
@@ -443,7 +443,7 @@
                     android:clickable="false"
                     android:focusable="false"
                     style="@style/Widget.Rfid.Button.Primary"
-                    android:text="Proceed to Enterprise Suite →" />
+                    android:text="@string/mode_enterprise_btn" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -454,7 +454,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="Powered by RFID Software India Private Limited\nhttps://rfidsoftwares.com"
+            android:text="@string/mode_upstream"
             android:textSize="12sp"
             android:textColor="@color/rfid_on_surface"
             android:alpha="0.5" />
