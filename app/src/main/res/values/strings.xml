@@ -49,5 +49,29 @@
     <string name="read_tag_scan_error">Status: Continuous scan error (%1$s)</string>
     <string name="read_tag_scan_stopped">Status: Continuous scan stopped. %1$d unique tags captured.</string>
     <string name="read_tag_summary">Total: %1$d | Unique: %2$d</string>
+    <string name="mode_suite">OpenRFID Suite</string>
+    <string name="mode_intro">Select an operation mode to get started</string>
+    <string name="mode_active_reader">📡 Active Hardware Reader</string>
+    <string name="mode_change_driver">⚙️ Change Driver</string>
+    <string name="mode_detecting">Driver: Auto-Detecting...</string>
+    <string name="mode_device">Device: Model Manufacturer</string>
+    <string name="mode_quick">⚡ Quick Testing Tools (No Login)</string>
+    <string name="mode_read">📖 Read Tag</string>
+    <string name="mode_read_desc">Scan EPC, TID &amp; USER banks</string>
+    <string name="mode_write">✏️ Write Tag</string>
+    <string name="mode_write_desc">Write EPC/USER data &amp; password</string>
+    <string name="mode_update_epc">🔢 Update EPC</string>
+    <string name="mode_update_desc">Batch serial EPC rewriting</string>
+    <string name="mode_lock">🔒 Lock / Unlock</string>
+    <string name="mode_lock_desc">Tag security &amp; access pwd</string>
+    <string name="mode_config">⚙️ Reader Config</string>
+    <string name="mode_config_desc">Driver, power &amp; region settings</string>
+    <string name="mode_diag">🩺 Hardware Diagnostics</string>
+    <string name="mode_diag_desc">Test hardware connection &amp; status logs</string>
+    <string name="mode_enterprise">🏢 Enterprise Inventory Engine</string>
+    <string name="mode_full_inventory">📦 Full Store Inventory &amp; Cloud Sync</string>
+    <string name="mode_enterprise_desc">Includes live inventory sessions, product catalog search, anti-theft gate monitoring, and API cloud sync (Login required).</string>
+    <string name="mode_enterprise_btn">Proceed to Enterprise Suite →</string>
+    <string name="mode_upstream">Powered by RFID Software India Private Limited\nhttps://rfidsoftwares.com</string>
 </resources>
 
